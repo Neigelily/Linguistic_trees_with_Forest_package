@@ -1,0 +1,59 @@
+
+ %% small-tree.tex
+   %Copyright (C) 2019 N. Rochant
+   
+   % This program is free software: you can redistribute it and/or modify
+	% it under the terms of the GNU General Public License as published by
+    % the Free Software Foundation, either version 3 of the License, or
+    % any later version.
+
+    % This program is distributed in the hope that it will be useful,
+    % but WITHOUT ANY WARRANTY; without even the implied warranty of
+    % MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    % GNU General Public License for more details.
+
+    % You should have received a copy of the GNU General Public License
+    % along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+\usepackage[edges]{forest}
+
+\begin{figure}[H]
+\centering
+\caption{\small Andi within Nakh-Daghestanian}\label{andigenia}
+\begin{forest}
+for tree={
+    edge path={
+        \noexpand\path [thick, \forestoption{edge}] (!u.parent anchor) -- +(0,-7pt) -| (.child anchor)\forestoption{edge label};
+    }, % this option together with setting the parent and child anchors to south and north, respectively, gives you the right-angle style for your branches
+    parent anchor=south,
+    child anchor=north,
+    align=center, % allows you to put line breaks within nodes
+}
+[\textbf{Nakh-Daghestanian}, DarkBlue
+	[Nakh]
+    [\textbf{Daghestanian}, color=RoyalBlue4
+		[Dargic]
+		[Lezgic]
+		[\textbf{Avar-Andic-Tsezic}, color=RoyalBlue4
+			[Avar]
+			[Tsezic]
+			[\textbf{Andic}, color=RoyalBlue3
+                [Akhvakh]
+                [Bagwalal]
+               	[Botlikh]                
+               	[Godoberi]
+               	[\textbf{Andi}, color=	RoyalBlue2
+               	    [\textbf{Upper Andi},draw, \forestoption{edge}, color= OliveDrab3]
+               	    [\textbf{Lower Andi},draw, \forestoption{edge}, color= MediumOrchid3]
+               	]
+                [Karata]           						[Chamalal]
+				[Tindi]
+        	]
+		]
+		[Lak]
+        [Khinalug]
+		]
+]
+\end{forest}
+\end{figure}
